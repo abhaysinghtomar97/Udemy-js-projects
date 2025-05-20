@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Randon Number Generator</h1>
+        <div class="board">
+
+        </div>
+        <button id="submitButton">Generate</button>
+    </div>
+
+    <script>
+        let board = document.querySelector('.board');
+        let submitButton = document.getElementById('submitButton');
+        submitButton.addEventListener('click', function() {
+            let a= Math.floor(Math.random() * 100); 
+            board.innerHTML = a;
+        });
+ </script>
+</body>
+</html>

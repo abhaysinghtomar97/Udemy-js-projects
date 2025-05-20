@@ -1,0 +1,26 @@
+body{
+    background-color: #a9b9c9;
+}
+.name{
+    color:red;
+}
+.container{
+    text-align: center;
+    margin-top:20%;
+    
+}
+
+button{
+    box-shadow: rgba(50, 50, 93, 0.25) 30px 50px 100px -20px, rgba(0.3, 0.3, 0.3, 0.3) 100px 30px 60px -30px, rgba(0, 0, 0, 0.35) 2px -2px 16px 0px ;
+    background-color: pink;
+    border: 1px solid white;
+    border-radius: 3px;
+    height: 30px;
+    width: 90px;
+}
+button:hover{
+    background-color: rgb(121, 116, 116);
+    color:aliceblue
+   
+
+}

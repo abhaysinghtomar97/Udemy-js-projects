@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <p>Generate a</p>
+            <p><span>Random Password</span></p>
+        </div>
+        <div class="textarea">
+            <input type="text" id="Password" class="input" placeholder="Enter your text here">
+            <i class="fas fa-clipboard" id="copy"></i>
+        </div>
+        <button id="generate">Generate Password</button>
+
+    </div>
+    <script>
+        let passwordbox = document.getElementById("Password");
+        let btn = document.getElementById("generate");
+        let copy = document.getElementById("copy");
+
+        const generatepassword = () => {
+            const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?";
+            let password = "";
+
+            for (let i = 0; i < 8; i++) {
+                password += characters.charAt(Math.floor(Math.random() * characters.length));
+
+            }
+            return password;
+            passwordbox.value = password;
+            return password;
+            
+        };
+
+        btn.addEventListener("click", () => {
+            passwordbox.value = generatepassword();
+        });
+        copy.addEventListener("click", ()=>{
+            const passwordcopy =passwordbox.value.trim();
+            if(!passwordcopy){
+                alert("Please generate a password first");
+                return;
+            }
+        
+        //copying the password
+        navigator.clipboard.writeText(passwordcopy).then(()=>{
+            alert("Password copied to clipboard");
+        });
+    });
+    </script>
+</body>
+
+</html>
